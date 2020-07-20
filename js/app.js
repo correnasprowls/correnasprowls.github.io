@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function handleInput (event) {
-    let canMoveWolf = true;
+    let canMoveWolf = false;
     // make move ship return true or false if it moved
     if (event.key === 'ArrowRight') {
         canMoveWolf = moveShip('right');
