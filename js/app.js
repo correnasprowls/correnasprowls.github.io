@@ -272,7 +272,7 @@ function resetGame( ) {
         announce.classList.remove('winText');
     }
     
-    announce.innerText = "Get the road runner to his home!";
+    announce.innerText = "Get to safety!";
     buildLvl(currentLevel);
 }
 
