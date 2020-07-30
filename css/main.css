@@ -133,3 +133,29 @@ section {
     text-shadow: 2px 2px brown;
 }
 
+@media only screen and (max-width: 600px) {
+    section {
+        width: 100vh;
+        height: 55vh;
+        padding: none;
+
+    }
+    #frame {
+        margin: 0;
+        width: 45vh;
+        height: 45vh;
+        margin: 0 auto;
+    }
+    #arrows img {
+        height: 12vh;
+    }
+    h1 {
+        display: none;
+    }
+    body {
+        width: 100%;
+    }
+    .square {
+        border: 1px solid rgba(136, 81, 10, 0.651);
+    }
+}
