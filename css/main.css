@@ -1,6 +1,41 @@
 body {
     background-color: rgb(95, 41, 25);
 }
+main {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#arrows {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template: '. arrowup .'
+                    'arrowleft . arrowright'
+                    '. arrowdown .';
+    grid-gap: 5px;
+    padding-top: 20px;
+}
+.up {
+    grid-area: arrowup;
+}
+.down {
+    grid-area: arrowdown;
+
+}
+.left {
+    grid-area: arrowleft;
+
+}
+.right {
+    grid-area: arrowright;
+}
+#arrows img {
+    background: radial-gradient(circle, rgb(5, 78, 4) 30%, rgba(10,121,9,1) 60%, rgba(5,156,58,1) 100%);
+    border: 3px solid darkgreen;
+    border-radius: 5%;
+    height: 80px;
+}
 section {
     width: 600px;
     height: 650px;

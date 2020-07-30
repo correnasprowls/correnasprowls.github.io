@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createGrid();
 
     document.querySelector('body').addEventListener('keydown', handleInput, event);
-
+    document.getElementById('arrows').addEventListener('click', handleInput, event.preventDefault())
     document.getElementById('resetButton').addEventListener('click', (event) => {
         resetGame();
         event.preventDefault();
@@ -52,16 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
 function handleInput (event) {
     let canMoveWolf = false;
     // make move ship return true or false if it moved
-    if (event.key === 'ArrowRight') {
+    if (event.key === 'ArrowRight' || event.target.className === 'right') {
         canMoveWolf = moveShip('right');
     }
-    if (event.key === 'ArrowLeft') {
+    if (event.key === 'ArrowLeft' || event.target.className === 'left') {
         canMoveWolf = moveShip('left');
     }
-    if (event.key === 'ArrowDown') {
+    if (event.key === 'ArrowDown' || event.target.className === 'down') {
         canMoveWolf = moveShip('down');
     }
-    if (event.key === 'ArrowUp') {
+    if (event.key === 'ArrowUp' || event.target.className === 'up') {
         canMoveWolf = moveShip('up');
     }
     if (canMoveWolf) {
