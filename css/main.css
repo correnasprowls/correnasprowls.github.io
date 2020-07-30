@@ -32,9 +32,14 @@ main {
 }
 #arrows img {
     background: radial-gradient(circle, rgb(5, 78, 4) 30%, rgba(10,121,9,1) 60%, rgba(5,156,58,1) 100%);
-    border: 3px solid darkgreen;
+    border-right: 3px solid darkgreen;
+    border-bottom: 3px solid darkgreen;
     border-radius: 5%;
     height: 80px;
+}
+#arrows img:hover {
+    border: none;
+
 }
 section {
     width: 600px;
@@ -147,10 +152,14 @@ section {
         margin: 0 auto;
     }
     #arrows img {
-        height: 12vh;
+        height: 9vh;
     }
     h1 {
-        display: none;
+        position: absolute;
+        left: 10px;
+        top: 95vh;
+        z-index: 1;
+
     }
     body {
         width: 100%;

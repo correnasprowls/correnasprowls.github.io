@@ -1,8 +1,21 @@
+// 1: [[0,0,0,0,0,0,0,0],
+// [0,0,0,0,0,0,0,0],
+// [0,0,0,0,0,0,0,0],
+// [0,0,0,0,0,0,0,0],
+// [0,0,0,0,0,0,0,0],
+// [0,0,0,0,0,0,0,0],
+// [0,0,0,0,0,0,0,0],
+// [0,0,0,0,0,0,0,0]],
+// 1 = bush
+// 2 = roadrunner
+// 3 = wolf
+// 4 = hole
+
 const lvls = {
     1: [[2,1,0,1,0,0,1,3],
         [0,1,0,0,0,0,1,0],
         [0,0,0,0,0,0,0,0],
-        [0,0,0,1,1,0,1,1],
+        [0,0,0,1,1,0,0,0],
         [0,0,0,1,1,0,0,0],
         [0,0,0,0,0,0,0,0],
         [0,1,0,0,1,0,1,0],
@@ -33,9 +46,18 @@ const lvls = {
         [0,1,0,1,1,0,0,0],
         [3,0,0,0,0,0,0,0],
         [0,1,0,0,1,0,1,1],
-        [0,0,0,0,1,0,0,0]]
+        [0,0,0,0,1,0,0,0]],
+
+    5: [[2,1,0,0,1,1,0,0],
+        [0,0,0,0,3,0,0,0],
+        [0,0,1,0,1,0,1,0],
+        [0,0,0,0,0,0,1,0],
+        [0,0,1,1,0,0,0,0],
+        [0,0,1,0,0,0,0,0],
+        [1,0,1,0,0,0,0,0],
+        [3,0,0,0,0,0,0,4]],
 }
-let currentLevel = 1;                  
+let currentLevel = 5;                  
 
 document.addEventListener('DOMContentLoaded', () => {
     createGrid();
@@ -174,7 +196,7 @@ function getWolfMoveDirection( wolfElement) {
     
     } 
     console.log('bestOption ' + bestOptionKey);
-    if (bestDistance != 0 && holeOption != bestOptionKey && holeDistance < bestDistance + 1 & holeDistance > 3.4) {
+    if (bestDistance != 0 && holeOption != bestOptionKey && holeDistance < bestDistance + 1 & holeDistance > 3.7) {
         bestOptionKey = holeOption;
         wentForHole = true;
     }
@@ -273,7 +295,11 @@ function resetGame( ) {
     }
     
     announce.innerText = "Get to safety!";
-    buildLvl(currentLevel);
+    if (lvls[currentLevel]) {
+        buildLvl(currentLevel);
+    } else {
+        buildLvl(currentLevel - 1);
+    }
 }
 
 function createGrid() {
