@@ -57,7 +57,7 @@ const lvls = {
         [1,0,1,0,0,0,0,0],
         [3,0,0,0,0,0,0,4]],
 }
-let currentLevel = 5;                  
+let currentLevel = 1;                  
 
 document.addEventListener('DOMContentLoaded', () => {
     createGrid();
